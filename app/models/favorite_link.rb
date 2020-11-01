@@ -1,0 +1,2 @@
+class FavoriteLink < ApplicationRecord
+end
