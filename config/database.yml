@@ -5,15 +5,15 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
   database: dash_dev
-  pool: 5
   username: paul
   password:
   host: localhost
@@ -27,4 +27,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: dash_prod
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
