@@ -54,8 +54,8 @@ genre_27 = Genre.create(keyword: "Mystery & Crime")
 
 user_1 = User.create(email: "paul.busby@gmail.com")
 
-book_1 = Book.create(title: "The Hobbit", author_id: author_1.id, user_id: 1, genre_id: genre_1.id, status: 0 )
-book_2 = Book.create(title: "Lord of the Flies", author_id: author_2.id, user_id: 1, genre_id: genre_2.id, status: 0 )
-book_3 = Book.create(title: "Catcher in the Rye", author_id: author_3.id, user_id: 1, genre_id: genre_2.id, status: 0 )
-book_4 = Book.create(title: "The Sun Also Rises", author_id: author_4.id, user_id: 1, genre_id: genre_2.id, status: 0 )
-book_5 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author_id: author_5.id, user_id: 1, genre_id: genre_1.id, status: 0 )
+book_1 = Book.create(title: "The Hobbit", author_id: author_1.id, user_id: user_1.id, genre_id: genre_1.id, status: 0 )
+book_2 = Book.create(title: "Lord of the Flies", author_id: author_2.id, user_id: user_1.id, genre_id: genre_2.id, status: 0 )
+book_3 = Book.create(title: "Catcher in the Rye", author_id: author_3.id, user_id: user_1.id, genre_id: genre_2.id, status: 0 )
+book_4 = Book.create(title: "The Sun Also Rises", author_id: author_4.id, user_id: user_1.id, genre_id: genre_2.id, status: 0 )
+book_5 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author_id: author_5.id, user_id: user_1.id, genre_id: genre_1.id, status: 0 )
