@@ -4,8 +4,8 @@ module Api
             def create_book_record
                 @author = Author.where(full_name: book_params[:full_name]).first_or_create({full_name: book_params[:full_name]}) 
                 @genre = Genre.where(keyword: book_params[:keyword]).first_or_create(book_params[:keyword])
-                book_attributes = {title: book_params[:title], author_id: @author.id, genre_id: @genre.id, user_id: 1, photo: book_params[:cover_url], status: book_params[:status]} 
-                @book = Book.where(title: book_params[:title], user_id: 1).first_or_initialize(book_attributes)
+                book_attributes = {title: book_params[:title], author_id: @author.id, genre_id: @genre.id, user_id: User.all.first.id, photo: book_params[:cover_url], status: book_params[:status]} 
+                @book = Book.where(title: book_params[:title], user_id: User.all.first.id).first_or_initialize(book_attributes)
                 
                 if @book.save
                     render json: @book, status: :ok
