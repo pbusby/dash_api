@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Author.destroy_all
+Genre.destroy_all
+Book.destroy_all
+User.destroy_all
+
 author_1 = Author.create(full_name: "J.R.R. Tolkein")
 author_2 = Author.create(full_name: "William Golding")
 author_3 = Author.create(full_name: "J.D. Salinger")
@@ -49,8 +54,8 @@ genre_27 = Genre.create(keyword: "Mystery & Crime")
 
 user_1 = User.create(email: "paul.busby@gmail.com")
 
-book_1 = Book.create(title: "The Hobbit", author_id: author_1.id, user_id: 1, genre_id: genre_1.id )
-book_2 = Book.create(title: "Lord of the Flies", author_id: author_2.id, user_id: 1, genre_id: genre_2.id )
-book_3 = Book.create(title: "Catcher in the Rye", author_id: author_3.id, user_id: 1, genre_id: genre_2.id )
-book_4 = Book.create(title: "The Sun Also Rises", author_id: author_4.id, user_id: 1, genre_id: genre_2.id )
-book_5 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author_id: author_5.id, user_id: 1, genre_id: genre_1.id )
+book_1 = Book.create(title: "The Hobbit", author_id: author_1.id, user_id: 1, genre_id: genre_1.id, status: 0 )
+book_2 = Book.create(title: "Lord of the Flies", author_id: author_2.id, user_id: 1, genre_id: genre_2.id, status: 0 )
+book_3 = Book.create(title: "Catcher in the Rye", author_id: author_3.id, user_id: 1, genre_id: genre_2.id, status: 0 )
+book_4 = Book.create(title: "The Sun Also Rises", author_id: author_4.id, user_id: 1, genre_id: genre_2.id, status: 0 )
+book_5 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author_id: author_5.id, user_id: 1, genre_id: genre_1.id, status: 0 )
