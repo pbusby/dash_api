@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Book.destroy_all
 Author.destroy_all
 Genre.destroy_all
-Book.destroy_all
 User.destroy_all
 
 author_1 = Author.create(full_name: "J.R.R. Tolkein")
