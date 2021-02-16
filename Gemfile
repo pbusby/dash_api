@@ -12,6 +12,8 @@ gem 'puma', '~> 3.11'
 # gem 'devise', '~> 4.2'
 gem 'pg', '~> 0.18.4'
 gem 'pg_search'
+gem 'active_model_serializers', '~> 0.10.2'
+gem 'kaminari'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
