@@ -2,7 +2,7 @@ module BestsellerScraper
     require 'open-uri'
     require 'down'
     require 'fileutils'
-    require 'dotenv/tasks'
+    # require 'dotenv/tasks'
 
     def self.mock_download
         puts "downloading books bleep bloop"
