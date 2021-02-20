@@ -1,5 +1,5 @@
 class Api::V1::BookSerializer < ActiveModel::Serializer
-    attributes :title, :author, :genre, :category, :status, :photo
+    attributes :title, :author, :genre, :category, :status, :photo, :id
 
     def title
         object.title
@@ -24,4 +24,8 @@ class Api::V1::BookSerializer < ActiveModel::Serializer
     def status
         object.status
     end
+    
+    def id
+        object.id
+    end 
 end

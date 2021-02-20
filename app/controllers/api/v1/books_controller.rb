@@ -20,7 +20,6 @@ module Api
             end
 
             def read_books
-                # byebug
                 @books = Book.already_read.page(params[:page]).per(10)
                 pagination_meta = {
                     total: @books.count,
