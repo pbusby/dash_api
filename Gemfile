@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -16,6 +17,8 @@ gem 'active_model_serializers', '~> 0.10.2'
 gem 'kaminari'
 gem 'nokogiri', '~> 1.11', '>= 1.11.1'
 gem 'sidekiq', '~> 6.1', '>= 6.1.3'
+gem 'cloudinary'
+gem "down", "~> 5.0"
 # gem 'httparty', '~> 0.18.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
