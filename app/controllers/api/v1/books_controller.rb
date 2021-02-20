@@ -44,9 +44,14 @@ module Api
             end
 
             def read_next_books
-                # byebug
                 @books = Book.read_next
-                render json: @books, status: :ok
+                data = {
+                    books: ActiveModel::Serializer::CollectionSerializer.new(
+                    @books,
+                    root: 'books',
+                    serializer: Api::V1::BookSerializer).as_json
+                }
+                render json: data, root:"books", status: :ok
             end
 
             def destroy
