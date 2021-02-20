@@ -8,16 +8,13 @@ module BestsellerScraper
         puts "downloading books bleep bloop"
     end 
 
-    # https://cloudinary.com/documentation/fetch_remote_images
-    # `https://res.cloudinary.com/dtb2b6cpx/image/fetch/${item.dataset.image}`
-    # need to loop through 
-
     def self.daily_download        
         Bestseller.destroy_all
         Cloudinary::Api.delete_resources_by_prefix('bestsellers')
         FileUtils.rm_rf(Dir['lib/modules/bestseller_images/*'])
-        html = URI.open('https://www.barnesandnoble.com/b/books/_/N-1fZ29Z8q8')
+        html = URI.open('https://www.barnesandnoble.com/b/books/_/N-1fZ29Z8q8', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36')
         doc = Nokogiri::HTML(html)
+
         bestseller_rows_array = doc.css('.topX-row')
         bestseller_rows_array.each do |row|
             book_title = row.css('.product-info-title a').text
