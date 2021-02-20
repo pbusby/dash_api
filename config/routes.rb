@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       post '/create_book_record', to: 'books#create_book_record'
       get '/read_books', to: 'books#read_books'
       get '/read_next_books', to: 'books#read_next_books'
-      get '/bestsellers', to: 'bestsellers#index'
+      get '/bestsellers', to: 'books#bestsellers'
+      # get '/bestsellers', to: 'bestsellers#index'
       resources :books, only: [:destroy]
       get '/genres', to: 'genres#all_genres'
     end 

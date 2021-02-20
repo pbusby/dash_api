@@ -54,6 +54,11 @@ module Api
                 render json: data, root:"books", status: :ok
             end
 
+            def bestsellers 
+                @books = Bestseller.all.page(params[:page]).per(10)
+                render json: @books, status: :ok
+            end
+
             def destroy
                 @book = Book.find(params[:id])
                 if @book.destroy 
